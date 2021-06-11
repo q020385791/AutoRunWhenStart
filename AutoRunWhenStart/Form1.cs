@@ -21,22 +21,14 @@ namespace AutoRunWhenStart
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //IWshRuntimeLibrary
-            //增加參考，選擇 COM 選項卡，然後 選擇Windows Script Host Object Model
-            //WshShell shell = new WshShell();
-            //IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Environment.GetFolderPath(Environment.SpecialFolder.Startup) + " " + "\\Test.lnk");
-            //shortcut.TargetPath = Application.ExecutablePath;
-            //shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
-            //shortcut.WindowStyle = 1;
-            //shortcut.Description = "test Application";
-            //shortcut.Save();
-            AutoStart(false);
+            AutoStart(true);
 
         }
 
         public static void AutoStart(bool isAuto)
         {
-            
+            //LocalMachine機碼位置
+            //電腦\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run32
             try
             {
                 if (isAuto == true)
